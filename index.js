@@ -106,10 +106,11 @@ const client = new MongoClient(uri, {
   run().catch(console.dir);
   
   
+
+  
   app.get('/', (req, res) => {
       res.send('Hello World! it s me how are you i am localhost')
     })
-  
   
   
     app.listen(port, () => {
