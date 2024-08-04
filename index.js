@@ -65,8 +65,6 @@ const client = new MongoClient(uri, {
       res.send(result)
       console.log('id is delete');
     })
-
-
     // 
 
     app.put('/item/:id', async(req,res)=>{
@@ -75,7 +73,6 @@ const client = new MongoClient(uri, {
       console.log(User);
       const filter = {_id:new ObjectId(id)}
       const options = {upsert: true}
-
 // 
       const updateUser = {
          $set:{
@@ -101,11 +98,11 @@ const client = new MongoClient(uri, {
       
     }
   }
+
   run().catch(console.dir);
   app.get('/', (req, res) => {
       res.send('Hello World! it s me how are you i am localhost')
     })
-  
   
     app.listen(port, () => {
       console.log(`Example app listening on port ${port}`)
