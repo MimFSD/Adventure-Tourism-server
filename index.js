@@ -56,6 +56,8 @@ const client = new MongoClient(uri, {
          res.send(result)
     })
 
+
+
     app.delete('/item/:id',async(req,res)=>{
       const id = req.params.id 
       const query = {_id : new ObjectId(id)}
@@ -74,6 +76,8 @@ const client = new MongoClient(uri, {
       const filter = {_id:new ObjectId(id)}
       const options = {upsert: true}
 // 
+
+
       const updateUser = {
          $set:{
           image: User.image,
