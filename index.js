@@ -90,6 +90,7 @@ const client = new MongoClient(uri, {
           Travel:User.Travel,
           totaVisitorsPerYear:User.totaVisitorsPerYear
 
+
          }
       }
       const result = await itemsCollection.updateOne(filter, updateUser,options)
@@ -103,10 +104,6 @@ const client = new MongoClient(uri, {
     }
   }
   run().catch(console.dir);
-  
-  
-  
-  
   
   
   app.get('/', (req, res) => {
