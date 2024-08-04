@@ -76,11 +76,7 @@ const client = new MongoClient(uri, {
       const filter = {_id:new ObjectId(id)}
       const options = {upsert: true}
 
-
-      
 // 
-
-
       const updateUser = {
          $set:{
           image: User.image,
