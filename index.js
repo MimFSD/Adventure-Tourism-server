@@ -75,6 +75,9 @@ const client = new MongoClient(uri, {
       console.log(User);
       const filter = {_id:new ObjectId(id)}
       const options = {upsert: true}
+
+
+      
 // 
 
 
@@ -90,8 +93,7 @@ const client = new MongoClient(uri, {
           Travel:User.Travel,
           totaVisitorsPerYear:User.totaVisitorsPerYear
 
-
-         }
+    }
       }
       const result = await itemsCollection.updateOne(filter, updateUser,options)
       res.send(result)
@@ -104,10 +106,6 @@ const client = new MongoClient(uri, {
     }
   }
   run().catch(console.dir);
-  
-  
-
-  
   app.get('/', (req, res) => {
       res.send('Hello World! it s me how are you i am localhost')
     })
