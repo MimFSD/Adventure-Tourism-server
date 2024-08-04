@@ -12,10 +12,6 @@ console.log(process.env.DB_PASS);
 
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.f8w8siu.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
 
-
-
-
-
 console.log(uri);
 
 const client = new MongoClient(uri, {
@@ -25,7 +21,6 @@ const client = new MongoClient(uri, {
       deprecationErrors: true,
     }
   });
-  
 
 
   async function run() {
@@ -40,13 +35,20 @@ const client = new MongoClient(uri, {
         const result = await cursor.toArray()
         res.send(result)
     })
+
+
+
     app.get('/item/:id',async(req,res)=>{
       const id = req.params.id
       const query = {_id : new ObjectId(id)}
       const result = await itemsCollection.findOne(query)
       res.send(result)
   })
-    // 
+    
+  // 
+
+
+
     app.post('/item',async(req,res)=>{
          const items = req.body 
          console.log(items,'result');
