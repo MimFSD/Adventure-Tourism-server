@@ -65,9 +65,7 @@ const client = new MongoClient(uri, {
     })
 
 
-
     // 
-
 
     app.put('/item/:id', async(req,res)=>{
       const id = req.params.id
@@ -88,7 +86,6 @@ const client = new MongoClient(uri, {
           Travel:User.Travel,
           totaVisitorsPerYear:User.totaVisitorsPerYear
 
-
          }
       }
       const result = await itemsCollection.updateOne(filter, updateUser,options)
@@ -96,9 +93,6 @@ const client = new MongoClient(uri, {
      
    })
 
-
-   
-      
       console.log("Pinged your deployment. You successfully connected to MongoDB!");
     } finally {
       
